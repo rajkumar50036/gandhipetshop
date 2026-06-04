@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Gandhi Pet Shop | Modern Heritage Luxury</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container": "#eeeeee",
+                    "surface-bright": "#f9f9f9",
+                    "on-tertiary-container": "#d97600",
+                    "on-primary-fixed-variant": "#2a4386",
+                    "surface-container-lowest": "#ffffff",
+                    "inverse-on-surface": "#f0f1f1",
+                    "on-error-container": "#93000a",
+                    "surface-dim": "#dadada",
+                    "tertiary-container": "#422000",
+                    "secondary-fixed": "#ffe088",
+                    "on-primary": "#ffffff",
+                    "outline-variant": "#c5c6d2",
+                    "primary-fixed-dim": "#b3c5ff",
+                    "tertiary-fixed-dim": "#ffb77d",
+                    "on-error": "#ffffff",
+                    "on-background": "#1a1c1c",
+                    "on-secondary": "#ffffff",
+                    "surface-container-low": "#f3f3f4",
+                    "on-secondary-fixed-variant": "#574500",
+                    "on-secondary-container": "#745c00",
+                    "on-tertiary": "#ffffff",
+                    "surface-tint": "#435b9f",
+                    "tertiary": "#240f00",
+                    "surface": "#f9f9f9",
+                    "inverse-primary": "#b3c5ff",
+                    "background": "#f9f9f9",
+                    "secondary": "#735c00",
+                    "on-tertiary-fixed": "#2f1500",
+                    "tertiary-fixed": "#ffdcc3",
+                    "on-primary-container": "#758dd5",
+                    "primary": "#00113a",
+                    "inverse-surface": "#2f3131",
+                    "on-tertiary-fixed-variant": "#6e3900",
+                    "error": "#ba1a1a",
+                    "primary-fixed": "#dbe1ff",
+                    "surface-container-highest": "#e2e2e2",
+                    "on-secondary-fixed": "#241a00",
+                    "on-primary-fixed": "#00174a",
+                    "error-container": "#ffdad6",
+                    "primary-container": "#002366",
+                    "outline": "#757682",
+                    "surface-container-high": "#e8e8e8",
+                    "surface-variant": "#e2e2e2",
+                    "secondary-fixed-dim": "#e9c349",
+                    "on-surface-variant": "#444650",
+                    "on-surface": "#1a1c1c",
+                    "secondary-container": "#fed65b"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-desktop": "64px",
+                    "margin-mobile": "20px",
+                    "gutter": "24px",
+                    "unit": "8px",
+                    "container-max": "1280px"
+            },
+            "fontFamily": {
+                    "display-lg-mobile": ["Playfair Display"],
+                    "button-text": ["Montserrat"],
+                    "body-md": ["Montserrat"],
+                    "headline-sm": ["Playfair Display"],
+                    "headline-md": ["Playfair Display"],
+                    "display-lg": ["Playfair Display"],
+                    "body-lg": ["Montserrat"],
+                    "label-md": ["Montserrat"]
+            },
+            "fontSize": {
+                    "display-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "button-text": ["15px", {"lineHeight": "1", "letterSpacing": "0.03em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-sm": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(254, 214, 91, 0.3);
+            box-shadow: 0 8px 32px 0 rgba(0, 35, 102, 0.05);
+        }
+
+        .hero-gradient {
+            background: radial-gradient(circle at top right, rgba(0, 35, 102, 0.05), transparent),
+                        radial-gradient(circle at bottom left, rgba(254, 214, 91, 0.1), transparent);
+        }
+
+        .btn-glossy {
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(to bottom, #00113a, #002366);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .btn-glossy::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: all 0.6s ease;
+        }
+
+        .btn-glossy:hover::after {
+            left: 100%;
+        }
+
+        .gold-underline::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background-color: #fed65b;
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .gold-underline:hover::after {
+            width: 100%;
+        }
+
+        .ambient-bloom {
+            box-shadow: 0 25px 50px -12px rgba(0, 35, 102, 0.08);
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        /* --- ANTIGRAVITY ANIMATION ENHANCEMENTS --- */
+        :root {
+            --ease-expo: cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        /* 60fps performance optimizations */
+        .parallax-element, .bento-card, .gallery-card, .feature-card, .testimonial-card, .hero-float-card-1, .hero-float-card-2, .hero-badge-drift, .btn-premium {
+            will-change: transform, opacity;
+            backface-visibility: hidden;
+            transform-style: preserve-3d;
+        }
+
+        /* Shimmer sweep effect */
+        .shimmer-sweep {
+            position: relative;
+            overflow: hidden;
+        }
+        .shimmer-sweep::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -150%;
+            width: 60%;
+            height: 100%;
+            background: linear-gradient(
+                to right,
+                rgba(255, 255, 255, 0) 0%,
+                rgba(255, 255, 255, 0.25) 50%,
+                rgba(255, 255, 255, 0) 100%
+            );
+            transform: skewX(-25deg);
+            pointer-events: none;
+            transition: none;
+        }
+        .shimmer-sweep:hover::after {
+            left: 150%;
+            transition: left 0.85s var(--ease-expo);
+        }
+
+        /* Floating loop keyframes and classes */
+        .hero-float-card-1 {
+            animation: float-card-1 8s ease-in-out infinite;
+        }
+        .hero-float-card-2 {
+            animation: float-card-2 6s ease-in-out infinite;
+        }
+        .hero-badge-drift {
+            animation: badge-drift-loop 7s ease-in-out infinite;
+        }
+
+        @keyframes float-card-1 {
+            0%, 100% { transform: translateY(0px) rotate(3deg); }
+            50% { transform: translateY(-15px) rotate(4deg); }
+        }
+        @keyframes float-card-2 {
+            0%, 100% { transform: translateY(0px) rotate(-6deg); }
+            50% { transform: translateY(-22px) rotate(-4deg); }
+        }
+        @keyframes badge-drift-loop {
+            0%, 100% { transform: translateY(0px) scale(1); }
+            50% { transform: translateY(-10px) translateX(5px) scale(1.02); }
+        }
+
+        /* Navbar shrinking scroll transition */
+        .nav-header {
+            transition: height 0.5s var(--ease-expo), background-color 0.5s var(--ease-expo), border-color 0.5s var(--ease-expo), box-shadow 0.5s var(--ease-expo);
+        }
+        .nav-header.scrolled {
+            height: 4.5rem; /* shrinks from h-20 */
+            background-color: rgba(255, 255, 255, 0.85);
+            box-shadow: 0 10px 30px -10px rgba(0, 35, 102, 0.08);
+            border-color: rgba(254, 214, 91, 0.25);
+        }
+
+        /* Menu item underline transitions */
+        .gold-underline::after {
+            transition: width 0.4s var(--ease-expo), transform 0.4s var(--ease-expo) !important;
+        }
+
+        /* CTA Nav Button softly pulses */
+        .nav-cta-pulse {
+            animation: nav-pulse 3s infinite ease-in-out;
+        }
+        @keyframes nav-pulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(0, 35, 102, 0.25); }
+            50% { box-shadow: 0 0 0 10px rgba(0, 35, 102, 0); }
+        }
+
+        /* Bento Grid items hover styles */
+        .bento-card {
+            transition: transform 0.6s var(--ease-expo), box-shadow 0.6s var(--ease-expo), border-color 0.6s var(--ease-expo);
+        }
+        .bento-card-image {
+            transition: transform 0.8s var(--ease-expo);
+        }
+        .bento-card:hover .bento-card-image {
+            transform: scale(1.08);
+        }
+
+        /* Feature Cards glowing style */
+        .feature-card {
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.6s var(--ease-expo), border-color 0.6s var(--ease-expo), box-shadow 0.6s var(--ease-expo);
+        }
+        .feature-card-glow {
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle 200px at var(--x, 0px) var(--y, 0px), rgba(254, 214, 91, 0.12), transparent 80%);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s var(--ease-expo);
+        }
+        .feature-card:hover .feature-card-glow {
+            opacity: 1;
+        }
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px -12px rgba(0, 35, 102, 0.1);
+            border-color: rgba(254, 214, 91, 0.3);
+        }
+        .feature-card-icon-container {
+            transition: transform 0.5s var(--ease-expo);
+        }
+        .feature-card:hover .feature-card-icon-container {
+            animation: icon-bob 2s ease-in-out infinite;
+        }
+        @keyframes icon-bob {
+            0%, 100% { transform: translateY(0px) scale(1.08); }
+            50% { transform: translateY(-8px) scale(1.08); }
+        }
+
+        /* Testimonials hover & stars sequence */
+        .testimonial-card {
+            transition: transform 0.6s var(--ease-expo), box-shadow 0.6s var(--ease-expo), border-color 0.6s var(--ease-expo), opacity 0.8s var(--ease-expo);
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        .testimonial-card.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px -10px rgba(0, 35, 102, 0.12);
+            border-color: rgba(254, 214, 91, 0.4);
+        }
+        .testimonial-star {
+            transform: scale(0.5);
+            opacity: 0;
+            transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.5s var(--ease-expo);
+        }
+        .testimonial-card.active .testimonial-star {
+            transform: scale(1);
+            opacity: 1;
+        }
+        .testimonial-card.active .testimonial-star:nth-child(1) { transition-delay: 0.1s; }
+        .testimonial-card.active .testimonial-star:nth-child(2) { transition-delay: 0.2s; }
+        .testimonial-card.active .testimonial-star:nth-child(3) { transition-delay: 0.3s; }
+        .testimonial-card.active .testimonial-star:nth-child(4) { transition-delay: 0.4s; }
+        .testimonial-card.active .testimonial-star:nth-child(5) { transition-delay: 0.5s; }
+
+        /* Gallery hover styles */
+        .gallery-card {
+            transition: transform 0.6s var(--ease-expo), box-shadow 0.6s var(--ease-expo);
+        }
+        .gallery-card:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 25px 50px -10px rgba(0, 35, 102, 0.15);
+        }
+        .gallery-image {
+            transition: transform 0.8s var(--ease-expo);
+        }
+        .gallery-card:hover .gallery-image {
+            transform: scale(1.06);
+        }
+
+        /* Buttons spring transitions */
+        .btn-premium {
+            transition: transform 0.5s var(--ease-expo), box-shadow 0.5s var(--ease-expo), background-color 0.5s var(--ease-expo);
+        }
+        .btn-premium:hover {
+            box-shadow: 0 10px 25px -5px rgba(0, 35, 102, 0.15), 0 0 15px 5px rgba(254, 214, 91, 0.25);
+        }
+
+        /* Footer social icons float */
+        .footer-social-icon {
+            transition: transform 0.5s var(--ease-expo), color 0.5s var(--ease-expo);
+        }
+        .footer-social-icon:hover {
+            transform: translateY(-6px) scale(1.15);
+            color: #fed65b !important;
+        }
+
+        /* Newsletter input focus */
+        .newsletter-input {
+            transition: box-shadow 0.4s var(--ease-expo), border-color 0.4s var(--ease-expo), background-color 0.4s var(--ease-expo);
+        }
+        .newsletter-input:focus {
+            outline: none;
+            box-shadow: 0 0 15px 3px rgba(254, 214, 91, 0.35);
+            border-color: rgba(254, 214, 91, 0.6) !important;
+            background-color: rgba(255, 255, 255, 0.15) !important;
+        }
+
+        /* Scroll reveals & page loads */
+        .reveal-element {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s var(--ease-expo), transform 0.8s var(--ease-expo);
+        }
+        .reveal-element.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .nav-reveal {
+            opacity: 0;
+            transform: translateY(-20px);
+            transition: opacity 0.8s var(--ease-expo), transform 0.8s var(--ease-expo);
+        }
+        .nav-reveal.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .hero-fade-init {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s var(--ease-expo), transform 0.8s var(--ease-expo);
+        }
+        .hero-fade-init.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .hero-fade-init-delay-1 { transition-delay: 0.15s; }
+        .hero-fade-init-delay-2 { transition-delay: 0.3s; }
+        .hero-fade-init-delay-3 { transition-delay: 0.45s; }
+
+        /* Custom spotlight/ambient cursor glow */
+        .cursor-glow {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 350px;
+            height: 350px;
+            background: radial-gradient(circle, rgba(254, 214, 91, 0.04) 0%, rgba(0, 35, 102, 0.01) 50%, transparent 70%);
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            z-index: 9999;
+            mix-blend-mode: screen;
+            transition: opacity 0.3s ease;
+            opacity: 0;
+        }
+        body:hover .cursor-glow {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md overflow-x-hidden">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/70 backdrop-blur-md border-b border-outline-variant/30 shadow-sm backdrop-saturate-150 h-20 nav-header nav-reveal">
+<div class="flex justify-between items-center h-full px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="font-display-lg text-display-lg-mobile md:text-display-lg text-primary tracking-tighter">
+                Gandhi Pet Shop
+            </div>
+<!-- Desktop Nav -->
+<nav class="hidden md:flex items-center space-x-8">
+<a class="text-secondary font-bold border-b-2 border-secondary font-button-text text-label-md" href="#">Dogs</a>
+<a class="text-on-surface uppercase tracking-widest font-button-text text-label-md relative gold-underline transition-all duration-300 hover:text-secondary-container" href="#">Cats</a>
+<a class="text-on-surface uppercase tracking-widest font-button-text text-label-md relative gold-underline transition-all duration-300 hover:text-secondary-container" href="#">Pet Food</a>
+<a class="text-on-surface uppercase tracking-widest font-button-text text-label-md relative gold-underline transition-all duration-300 hover:text-secondary-container" href="#">Accessories</a>
+<a class="text-on-surface uppercase tracking-widest font-button-text text-label-md relative gold-underline transition-all duration-300 hover:text-secondary-container" href="#">Pet Care</a>
+<a class="text-on-surface uppercase tracking-widest font-button-text text-label-md relative gold-underline transition-all duration-300 hover:text-secondary-container" href="#">Gallery</a>
+</nav>
+<div class="flex items-center space-x-6">
+<div class="hidden md:flex items-center space-x-4">
+<button class="material-symbols-outlined text-primary hover:scale-110 transition-transform">search</button>
+<button class="material-symbols-outlined text-primary hover:scale-110 transition-transform">dark_mode</button>
+</div>
+<button class="btn-glossy px-6 py-3 rounded-full text-on-primary font-button-text text-label-md uppercase active:scale-95 duration-150 magnetic-button btn-premium nav-cta-pulse">
+                    Call Now
+                </button>
+</div>
+</div>
+</header>
+<!-- Full Screen Hero -->
+<section class="relative min-h-screen flex items-center pt-20 hero-gradient overflow-hidden">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-2 gap-gutter items-center relative z-10">
+<div class="space-y-8 hero-fade-init">
+<div class="inline-block px-4 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-md text-label-md animate-pulse hero-fade-init hero-fade-init-delay-1">
+                    Moulali's Trusted Pet Experts
+                </div>
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-primary leading-tight hero-fade-init hero-fade-init-delay-2">
+                    Find Your Perfect Companion at <span class="text-secondary italic">Gandhi Pet Shop</span>
+                </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg hero-fade-init hero-fade-init-delay-3">
+                    Premium Dogs, Cats, Pet Food, Accessories &amp; Expert Pet Care Services in Moulali, Hyderabad. Experience the gold standard in companion care.
+                </p>
+<div class="flex flex-col sm:flex-row gap-4 pt-4 hero-fade-init hero-fade-init-delay-3">
+<a class="btn-glossy px-8 py-4 rounded-xl text-on-primary text-center font-button-text text-label-md uppercase hover:scale-105 shadow-lg magnetic-button btn-premium" href="#">
+                        View Available Pets
+                    </a>
+<a class="bg-surface-container-low px-8 py-4 rounded-xl text-primary border border-outline-variant text-center font-button-text text-label-md uppercase hover:bg-secondary-container transition-colors magnetic-button btn-premium" href="#">
+                        Shop Pet Food
+                    </a>
+</div>
+</div>
+<!-- Floating Hero Elements -->
+<div class="relative h-[500px] md:h-[600px] mt-12 md:mt-0 hero-parallax-container">
+<!-- Golden Retriever Card -->
+<div class="absolute top-0 right-0 w-4/5 h-4/5 parallax-element" data-depth="0.12">
+<div class="w-full h-full rounded-[40px] overflow-hidden ambient-bloom border-4 border-white rotate-3 transition-transform duration-500 hover:rotate-0 hero-float-card-1">
+<img class="w-full h-full object-cover" data-alt="A luxurious high-resolution photograph of a Golden Retriever puppy sitting elegantly in a bright, minimalist sunlit living room. The setting is upscale with clean white walls and polished marble floors, reflecting a modern heritage aesthetic. The lighting is soft and golden, creating a warm and premium feel for a luxury pet boutique brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxTjyB9pe6xgtbMqndpgRhkYGD_Jt1S96eNq56RnB0pBeYgB3QEZpi84cikCUjAf_6ze41wiuOKByvqGGerqXCIf5ABD3RVcMtVtGkovSWdp3PCX3xe67OS8h8RN0HyKcVxC8EQovr0-sZI4A4AYSIj9EVZLXjaprclrA0YX1cGXTZ3JUmdBO7m3xxknhO92jdfJ6mYcLpep0MIket0ZiRSadODF2Vm3DOldrkmXJcdZ4V599X1kNxPmMxA-aLCosS32CHmGA2SIk"/>
+</div>
+</div>
+<!-- Persian Cat Card -->
+<div class="absolute bottom-10 left-0 w-3/5 h-3/5 parallax-element" data-depth="0.25">
+<div class="w-full h-full rounded-[40px] overflow-hidden ambient-bloom border-4 border-white -rotate-6 transition-transform duration-500 hover:rotate-0 hero-float-card-2">
+<img class="w-full h-full object-cover" data-alt="A portrait of a majestic Persian cat with long, flowing white fur sitting on a velvet royal blue cushion. The background is a blurred, high-end interior with gold accents and soft bokeh lighting. The overall mood is one of sophisticated luxury and peaceful companionship, fitting a premium pet shop's identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAh0b8W__8KqaShsUE3OyeoX2Hbz_0aMoWNSX1uUw3KcT4iJUhNfKKEgvT-9ibNhXWCRTA_sVs87jZkgODeUS0dK0a0_nVc4mm2yvnF3sVokejaaNPmBtZLQtrN4meRT91uaWUdNhYIcwbMvI91C1Bh1Fw9cJL8WFyf7mJuV7_VsJ4S_UcevewgjxdATFeUgUG-BnuLNU8LR10xDCW8XF_vLrxMYxxaFvGXF0M6qXE-BF0EJO2fGi5ezKy4ps0OxJKqVLX10TUVc3k"/>
+</div>
+</div>
+<!-- Floating Glass Badge Element -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30 hidden md:block parallax-element" data-depth="0.4">
+<div class="glass-card p-6 rounded-2xl hero-badge-drift">
+<div class="flex items-center space-x-3">
+<div class="w-12 h-12 bg-secondary-container rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-on-secondary-container">pets</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-primary">Certified Breeding</p>
+<p class="text-xs text-on-surface-variant">Top Pedigree Guaranteed</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Categories (Bento Style) -->
+<section class="py-24 bg-surface-bright overflow-hidden">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop reveal-element">
+<div class="text-center mb-16">
+<h2 class="font-headline-md text-headline-md text-primary mb-4">Our Premium Departments</h2>
+<div class="w-24 h-1 bg-secondary mx-auto rounded-full"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter h-auto md:h-[600px]">
+<!-- Dogs -->
+<div class="md:col-span-8 group relative overflow-hidden rounded-[32px] glass-card bento-card shimmer-sweep">
+<img class="absolute inset-0 w-full h-full object-cover bento-card-image" data-alt="A group of diverse, well-groomed purebred puppies playing in a lush, green upscale garden. The sun is setting, casting a soft orange glow across the scene. The image captures the vitality and health of top-tier pets from a reputable breeder. The composition is artistic and high-end, evoking a sense of joy and luxury family life." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0nJ-Nk5J07iLL-cVKoieI61gtCanlGvlLkvV66EHE7k-mrAZ8DwM1CplX56eWNXTnka5bQOn8_Cso5HPTpcQcRIdupFJXvnNtMfVEX9YeS7ubZtjJg5_bAtuIqcclEH6Q5ZhCDZmfP1LZ3Sj0cjdRa-mJ_x4Hr30KuDf4vDzznoveHqRirCml-CHb0EvPV_kuhyF-VHjKIzdR7yJ5Pc9oMtl2j19YHqTT-SHLfxn2J4igi2YeajLWaTEcqC_g5qdTKGVsIqHNp6Y"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-8 left-8 text-on-primary">
+<h3 class="font-headline-md text-headline-md mb-2">Canine Excellence</h3>
+<p class="font-body-md text-body-md opacity-90 mb-6">Explore our curated selection of pedigree breeds.</p>
+<button class="bg-secondary-container text-on-secondary-container px-6 py-2 rounded-full font-button-text text-label-md hover:bg-white hover:text-primary transition-all magnetic-button btn-premium">Discover Dogs</button>
+</div>
+</div>
+<!-- Cats -->
+<div class="md:col-span-4 group relative overflow-hidden rounded-[32px] glass-card bento-card shimmer-sweep">
+<img class="absolute inset-0 w-full h-full object-cover bento-card-image" data-alt="A close-up shot of an exotic Shorthair cat looking directly into the camera with piercing eyes. The lighting is dramatic and moody, emphasizing the texture of its fur. The setting is a luxury apartment with soft, expensive fabrics. The image conveys mystery, elegance, and high-end pet ownership." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRMBCE4bUA4M-RbvJiK_kCqWlsbOhpbHh8p_9eNf0zlXVZmBPFScOPG93hJy7XyK1vepbY_UMDEc5ehoFSyicksp1YnAR-PTccxN4FWwALNVK7Z43CHqS9XezV116hmvUD8SuQbO1FSNrsnhPdLpdkVKnlxiN_zjKipRar2OIXAy0dYM2_97bLNzUrhsZs82hzctqielVuRfCcKe05eHOT_tCcgGejZudEJBFOq6cxdI_rq54arhDcmW2mgzpuUS3iGR3lZjQuGfA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-8 left-8 text-on-primary">
+<h3 class="font-headline-sm text-headline-sm mb-2">Feline Grace</h3>
+<button class="material-symbols-outlined bg-white/20 p-3 rounded-full backdrop-blur-md hover:bg-secondary-container hover:text-primary transition-all magnetic-button btn-premium">arrow_forward</button>
+</div>
+</div>
+<!-- Food -->
+<div class="md:col-span-4 group relative overflow-hidden rounded-[32px] glass-card bento-card shimmer-sweep">
+<img class="absolute inset-0 w-full h-full object-cover bento-card-image" data-alt="Gourmet pet food being served in a sleek, designer bowl on a dark stone countertop. Fresh ingredients like salmon, carrots, and peas are arranged artistically around the bowl. The lighting is professional studio-style, highlighting the quality and nutrition of high-end pet cuisine." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLMVkqH_KLbdtrg82Bd7Uiek6niSeJRdF2a-dEokn42K2j3hJqqlnCW2KYkrPqROXgk7BZ1-PHL5YD36Eizz1Kpi65nf7WoVr0PcKwHNhdrsio-Co5O-rQ5fSsEiZ79wFHmTF68S76vOXH05XaeeQtIVyiCwiK1M15QUMBdM6k_r7RPpG59lPhWHA79yz99UbpwoxgS0HXsLM6YX4MVpczuB045b3zIlxCBjaEQ2BdTKBSkCGZg5yZ4v5Fp5rXoRC2rx3T7dG4DPk"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-8 left-8 text-on-primary">
+<h3 class="font-headline-sm text-headline-sm mb-2">Pet Nutrition</h3>
+<button class="text-secondary-fixed font-button-text text-label-md uppercase tracking-widest magnetic-button btn-premium">Shop Diet</button>
+</div>
+</div>
+<!-- Accessories -->
+<div class="md:col-span-8 group relative overflow-hidden rounded-[32px] glass-card bento-card shimmer-sweep">
+<img class="absolute inset-0 w-full h-full object-cover bento-card-image" data-alt="A collection of luxury pet accessories including leather collars with gold hardware, a cashmere pet blanket, and high-design wooden pet furniture. The items are arranged in a boutique gallery setting with soft spotlighting. The aesthetic is extremely sophisticated, emphasizing fashion-forward pet lifestyle." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmKFfQcvdic4HXdHKdnIYIJpRPvsNLqrTV3uP-Dv1XegsiejgPIHj3ca1QCRiE7PazyDYt1cBI4BDn_NSm651-7iENOPAGt3sREPgWaZONoeV9EIau6r4FSwUuszKrLAZq8U-LMrTS13CWq62-LFQpkGROflX4rht4RdzP6BEY51vG4CtGI-DiBBZUNol_uU13OHtw9Cc6Q28bAcfymMPg89gLs6S7Zeq33gNUloa7hnfBwKqo7F7eOVQ8Wg-Tkp_jpnCDiZ6qwi8"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-8 left-8 text-on-primary">
+<h3 class="font-headline-md text-headline-md mb-2">The Boutique</h3>
+<p class="font-body-md text-body-md opacity-90 mb-6">Luxury accessories for the discerning companion.</p>
+<button class="bg-primary-container text-white px-8 py-3 rounded-xl font-button-text text-label-md border border-outline/20 magnetic-button btn-premium">View Collection</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Why Choose Gandhi -->
+<section class="py-24 bg-primary relative overflow-hidden">
+<div class="absolute top-0 right-0 w-[500px] h-[500px] bg-secondary opacity-10 blur-[120px] rounded-full"></div>
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop relative z-10 reveal-element">
+<div class="text-center mb-16 text-on-primary">
+<h2 class="font-headline-md text-headline-md mb-4">The Gandhi Difference</h2>
+<p class="font-body-lg text-body-lg opacity-80 max-w-2xl mx-auto">Providing a legacy of care and commitment to the pets of Hyderabad for over a decade.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Card 1 -->
+<div class="p-10 rounded-[40px] border border-white/10 bg-white/5 backdrop-blur-lg transition-all duration-500 group feature-card">
+<div class="w-16 h-16 rounded-2xl bg-secondary-container flex items-center justify-center mb-8 feature-card-icon-container">
+<span class="material-symbols-outlined text-on-secondary-container text-3xl" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-white mb-4">Ethical Sourcing</h4>
+<p class="font-body-md text-body-md text-white/70">We partner only with KCI registered breeders to ensure the highest standards of health and temperament.</p>
+</div>
+<!-- Card 2 -->
+<div class="p-10 rounded-[40px] border border-white/10 bg-white/5 backdrop-blur-lg transition-all duration-500 group feature-card">
+<div class="w-16 h-16 rounded-2xl bg-secondary-container flex items-center justify-center mb-8 feature-card-icon-container">
+<span class="material-symbols-outlined text-on-secondary-container text-3xl" style="font-variation-settings: 'FILL' 1;">medical_services</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-white mb-4">Expert Care</h4>
+<p class="font-body-md text-body-md text-white/70">From grooming to nutritional advice, our on-site specialists provide holistic support for your pet's life.</p>
+</div>
+<!-- Card 3 -->
+<div class="p-10 rounded-[40px] border border-white/10 bg-white/5 backdrop-blur-lg transition-all duration-500 group feature-card">
+<div class="w-16 h-16 rounded-2xl bg-secondary-container flex items-center justify-center mb-8 feature-card-icon-container">
+<span class="material-symbols-outlined text-on-secondary-container text-3xl" style="font-variation-settings: 'FILL' 1;">support_agent</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-white mb-4">Lifetime Support</h4>
+<p class="font-body-md text-body-md text-white/70">Our relationship doesn't end at adoption. We offer lifelong guidance for you and your furry friend.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials Section -->
+<section class="py-24 bg-surface relative">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop reveal-element">
+<h2 class="font-headline-md text-headline-md text-primary text-center mb-16">Words from our Family</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<div class="glass-card p-8 rounded-3xl testimonial-card">
+<div class="flex text-secondary-container mb-4 testimonial-stars">
+<span class="material-symbols-outlined testimonial-star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined testimonial-star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined testimonial-star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined testimonial-star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined testimonial-star" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface mb-6 italic">"Finding Gandhi Pet Shop was a blessing. The care they take in ensuring their pets go to the right homes is unparalleled in Hyderabad."</p>
+<div class="flex items-center space-x-4">
+<div class="w-12 h-12 rounded-full bg-primary-container"></div>
+<div>
+<p class="font-label-md text-label-md text-primary">Dr. Ananya Reddy</p>
+<p class="text-xs text-on-surface-variant">Labrador Owner</p>
+</div>
+</div>
+</div>
+<div class="glass-card p-8 rounded-3xl testimonial-card border-secondary/20">
+<div class="flex text-secondary-container mb-4 testimonial-stars">
+<span class="material-symbols-outlined testimonial-star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined testimonial-star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined testimonial-star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined testimonial-star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined testimonial-star" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface mb-6 italic">"The premium cat food collection is the best. My Persian cat is healthier and has a much shinier coat thanks to their recommendation."</p>
+<div class="flex items-center space-x-4">
+<div class="w-12 h-12 rounded-full bg-secondary-container"></div>
+<div>
+<p class="font-label-md text-label-md text-primary">Vikram Malhotra</p>
+<p class="text-xs text-on-surface-variant">Persian Cat Owner</p>
+</div>
+</div>
+</div>
+<div class="glass-card p-8 rounded-3xl testimonial-card">
+<div class="flex text-secondary-container mb-4 testimonial-stars">
+<span class="material-symbols-outlined testimonial-star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined testimonial-star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined testimonial-star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined testimonial-star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined testimonial-star" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface mb-6 italic">"Excellent grooming service in Moulali. Very professional staff and they treated my dog with so much love."</p>
+<div class="flex items-center space-x-4">
+<div class="w-12 h-12 rounded-full bg-primary-container"></div>
+<div>
+<p class="font-label-md text-label-md text-primary">Sanjana K.</p>
+<p class="text-xs text-on-surface-variant">Beagle Owner</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Masonry Gallery -->
+<section class="py-24">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop reveal-element">
+<h2 class="font-headline-md text-headline-md text-primary mb-12">The Gallery</h2>
+<div class="columns-1 sm:columns-2 lg:columns-3 gap-gutter space-y-gutter">
+<div class="rounded-3xl overflow-hidden shadow-lg gallery-card shimmer-sweep">
+<img class="w-full gallery-image" data-alt="A candid, high-end photograph of a stylish pet owner walking their perfectly groomed Poodle through a modern urban park. The morning sun creates long shadows and a crisp, clean aesthetic. The focus is on the emotional bond and the high-lifestyle aspect of pet ownership." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrIMcq-2H8LSmrmo2bmSbhimMc0yWJliHksYm8gWDIIDa_e_LoAEFGSdn5_uaCbThaf--Z6OAj2tvAgxl_fJNoQ4ICRjS6KYCIVO4uYHB9XChDBhyNQWO3xeGx5WG8Ewx7Z3mJw_Y15jL4nsnFKe941te92fvEBdBbbDODzVs1KYp8q2u5aUWyIyzjGojm-8QJCoraGxY5aL9O9ReC6tIwSwW4UopJkfKjGxuSj7YnK4bUQkmSvEJwojmgpiAQx-pZ2Noqkzf9L2A"/>
+</div>
+<div class="rounded-3xl overflow-hidden shadow-lg gallery-card shimmer-sweep">
+<img class="w-full gallery-image" data-alt="A cinematic interior shot of a luxury pet spa within Gandhi Pet Shop. A small dog is receiving a gentle bath with premium organic products. Steam rises softly in a beautifully lit room with gold hardware and white subway tiles. The atmosphere is professional, serene, and ultra-high-end." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBk_eghoNvcE00s29RyLefze3vF63xqG20TSBo85gd8ESWWag_Saho5TKNzAybUoPTxnCuWLf4XoYips5JJz8-QtaDAgOWOdfCBFobDczhcA7x_hCUgjh5wB0rzG7sXud1oqNI4bO2bJHRTuODO9EYnC5b_LWBJjWnjyQigm3VTf4gqm3P7Gr9d1HP5IDCE62jyp5NsUcGzteEfSt8ufS5FMp59CJgKpJ_XLwTGzW0kUCz4MME8wnb_tA6Gq2zAr2HvlZmWtWol9GA"/>
+</div>
+<div class="rounded-3xl overflow-hidden shadow-lg gallery-card shimmer-sweep">
+<img class="w-full gallery-image" data-alt="A portrait of a Golden Retriever smiling at the camera in a professional studio setting. The background is a soft royal blue, matching the brand colors. The lighting is bright and cheerful, highlighting the dog's healthy coat and friendly expression. It captures the essence of a happy family pet." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0I0SSG9Gv6EBd2eqpOqZYVfrmgzDn2LOZ22SQYDCKxePqmjChGr5Kaoh2jlxGNIxG8GAZbdqWXLlkWAV1DEUsL28JaTruOygot7vfTfmfZCHJoVkefNkfo1FDnmhGDkR46WNxGqfp-QysYYNTnWRI9w8EI7gdOueXbziv25SojFi_ir1tg_EOuIZO04Eli0ioRuPHMC42vd6zykso60bw0S-nIOBZLVwYtuiu13UtZ839rrqiXh9fAyL3jbP24GhZra64Z85Eo6Y"/>
+</div>
+<div class="rounded-3xl overflow-hidden shadow-lg gallery-card shimmer-sweep">
+<img class="w-full gallery-image" data-alt="An artistic flat-lay of luxury pet care products on a marble surface. Includes a leather leash, a silver pet bowl, and botanical shampoo bottles. The composition is balanced and elegant, emphasizing the 'Modern Heritage' luxury theme of Gandhi Pet Shop." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCv1iAkWDc9M5qST7YEzAOmK9PE7aIyXzcGxr9FzSioL41zQm0Rt2qlskhAfuiy0FNH2WR3wxQOpc6onJrQgNbkIREqFgApeie_0tF4hOPHCIGHwl0JXz7KEAHxb8xTnKfI4egsFhf_7I8sWwIP3iW5vCSRAgB3HJ5TOW1X6EoFcUPwwi7gA9ohrk8H6UgW_y0_QWsEdZTOuXiJ2SRrEryJgp63zFbaqP8Ki6n9gSLURx2ecTxIm0zJ2bkdEdq9CF9tPMb34ScKFTY"/>
+</div>
+<div class="rounded-3xl overflow-hidden shadow-lg gallery-card shimmer-sweep">
+<img class="w-full gallery-image" data-alt="A high-end lifestyle shot of a cat sleeping on a designer rug in a luxury penthouse apartment. Large floor-to-ceiling windows show a soft city skyline in the background. The scene is tranquil and emphasizes the integration of pets into an upscale, modern lifestyle." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPMIopLEDfo1-4R2-j4wt7xbbYjRMfIRWlz54qY_gAhusgcJXYPtGFM9TnSg0ZYE1h0LraS29C1wmrr0Iwk0BAJC9DoW1giyn5sSfYGXmaMZykjXQNTGYdyQ_MO004uaxY961-TQrwMjmFlPRNV5R4GvXPSHXqFzCYNgeI5QkkSjDtZSsicUevzajkDWxyxhp6CsQdMDRREZ-FwwggN2ilDi2C4FT_MV77x5sUW9HECBGXg-er0shV4gSarg2O8h9DQmhA4zL0jpg"/>
+</div>
+</div>
+</div>
+</section>
+<!-- SideNavBar (Concierge) -->
+<div class="fixed bottom-8 right-8 z-50 flex items-center justify-center">
+<div class="group relative">
+<div class="absolute bottom-20 right-0 bg-secondary-container p-4 rounded-2xl shadow-xl w-64 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none group-hover:pointer-events-auto">
+<div class="flex items-center space-x-3 mb-2">
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-sm">person</span>
+</div>
+<div>
+<p class="font-button-text text-label-md text-primary">Concierge</p>
+<p class="text-[10px] text-on-surface-variant">Active Now</p>
+</div>
+</div>
+<p class="text-xs text-primary mb-3">Hello! How can we help you find your new best friend today?</p>
+<a class="block w-full text-center bg-primary text-white py-2 rounded-xl text-xs font-button-text uppercase tracking-widest hover:bg-primary-container transition-colors magnetic-button btn-premium" href="https://wa.me/7075053004" target="_blank">
+                    Chat on WhatsApp
+                </a>
+</div>
+<button class="bg-secondary-container text-on-secondary-container h-16 w-16 rounded-full flex items-center justify-center shadow-xl shadow-primary/20 hover:scale-110 hover:shadow-2xl transition-all active:scale-90 magnetic-button btn-premium">
+<span class="material-symbols-outlined text-2xl">chat</span>
+</button>
+</div>
+</div>
+<!-- Footer -->
+<footer class="w-full rounded-t-xl bg-primary dark:bg-surface-container-lowest shadow-2xl overflow-hidden reveal-element">
+<div class="bg-primary dark:bg-surface-container-low border-t border-outline/10">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter py-20 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="space-y-6">
+<div class="font-display-lg text-headline-md text-tertiary-fixed dark:text-primary">
+                        Gandhi Pet Shop
+                    </div>
+<p class="font-body-md text-body-md text-on-primary/80 dark:text-on-surface-variant">
+                        Moulali, Hyderabad - 500040<br/>
+                        Healthy Pets, Happy Families.<br/>
+                        Phone: 7075053004
+                    </p>
+<div class="flex space-x-4">
+<a class="text-on-primary/60 hover:text-secondary-fixed transition-colors footer-social-icon" href="#">
+<svg class="w-6 h-6 fill-current" viewbox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path></svg>
+</a>
+<a class="text-on-primary/60 hover:text-secondary-fixed transition-colors footer-social-icon" href="#">
+<svg class="w-6 h-6 fill-current" viewbox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.85-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.584.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg>
+ </a>
+ </div>
+ </div>
+ <div class="space-y-6">
+ <h5 class="font-headline-sm text-headline-sm text-on-primary">Quick Links</h5>
+ <ul class="space-y-4">
+ <li><a class="font-body-md text-on-primary/80 hover:text-secondary-fixed transition-colors" href="#">About Us</a></li>
+ <li><a class="font-body-md text-on-primary/80 hover:text-secondary-fixed transition-colors" href="#">Contact</a></li>
+ <li><a class="font-body-md text-on-primary/80 hover:text-secondary-fixed transition-colors" href="#">Shipping Policy</a></li>
+ <li><a class="font-body-md text-on-primary/80 hover:text-secondary-fixed transition-colors" href="#">Privacy Policy</a></li>
+ </ul>
+ </div>
+ <div class="space-y-6">
+ <h5 class="font-headline-sm text-headline-sm text-on-primary">Pet Care</h5>
+ <ul class="space-y-4">
+ <li><a class="font-body-md text-on-primary/80 hover:text-secondary-fixed transition-colors" href="#">Grooming</a></li>
+ <li><a class="font-body-md text-on-primary/80 hover:text-secondary-fixed transition-colors" href="#">Training</a></li>
+ <li><a class="font-body-md text-on-primary/80 hover:text-secondary-fixed transition-colors" href="#">Vaccination</a></li>
+ <li><a class="font-body-md text-on-primary/80 hover:text-secondary-fixed transition-colors" href="#">Health Consultation</a></li>
+ </ul>
+ </div>
+ <div class="space-y-6">
+ <h5 class="font-headline-sm text-headline-sm text-on-primary">Newsletter</h5>
+ <p class="font-body-md text-on-primary/80">Stay updated with our newest arrivals and expert tips.</p>
+ <div class="flex">
+ <input class="w-full bg-white/10 border-none rounded-l-xl text-white placeholder:text-white/40 focus:ring-2 focus:ring-secondary-container newsletter-input" placeholder="Email address" type="email"/>
+ <button class="bg-secondary-container px-4 rounded-r-xl text-primary material-symbols-outlined magnetic-button btn-premium">send</button>
+ </div>
+ </div>
+ </div>
+ <div class="py-8 px-margin-mobile md:px-margin-desktop border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-on-primary/60 font-label-md text-label-md">
+ <span>© 2024 Gandhi Pet Shop. Modern Heritage Luxury.</span>
+ <div class="flex space-x-6 mt-4 md:mt-0">
+ <a class="hover:text-white transition-colors" href="#">Terms of Service</a>
+ <a class="hover:text-white transition-colors" href="#">Sitemap</a>
+ </div>
+ </div>
+ </div>
+ </footer>
+<script>
+        // Custom Spotlight / Ambient Cursor Glow tracker
+        const cursorGlow = document.createElement('div');
+        cursorGlow.className = 'cursor-glow';
+        document.body.appendChild(cursorGlow);
+
+        document.addEventListener('mousemove', (e) => {
+            cursorGlow.style.left = e.clientX + 'px';
+            cursorGlow.style.top = e.clientY + 'px';
+        });
+
+        // Page Load Animations Reveal
+        window.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                document.querySelectorAll('.nav-reveal, .hero-fade-init').forEach(el => {
+                    el.classList.add('revealed');
+                });
+            }, 100);
+        });
+
+        // Navbar Shrink scroll interaction
+        const headerEl = document.querySelector('.nav-header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 40) {
+                headerEl.classList.add('scrolled');
+            } else {
+                headerEl.classList.remove('scrolled');
+            }
+        });
+
+        // Intersection Observer for scroll-reveal animations
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                    if (entry.target.classList.contains('testimonial-card')) {
+                        entry.target.classList.add('active');
+                    }
+                }
+            });
+        }, { threshold: 0.12 });
+
+        document.querySelectorAll('.reveal-element, .testimonial-card').forEach(el => {
+            revealObserver.observe(el);
+        });
+
+        // Bento Cards 3D Interactive Tilt
+        const bentoCards = document.querySelectorAll('.bento-card');
+        bentoCards.forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                const rotateX = (centerY - y) / 10;
+                const rotateY = (x - centerX) / 18;
+                
+                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-15px) scale(1.01)`;
+                card.style.transition = 'transform 0.1s ease-out';
+            });
+            
+            card.style.transition = 'transform 0.6s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.6s cubic-bezier(0.22, 1, 0.36, 1)';
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px) scale(1)';
+                card.style.transition = 'transform 0.6s cubic-bezier(0.22, 1, 0.36, 1)';
+            });
+        });
+
+        // Feature Cards dynamic border glow tracking
+        const featureCards = document.querySelectorAll('.feature-card');
+        featureCards.forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                card.style.setProperty('--x', `${x}px`);
+                card.style.setProperty('--y', `${y}px`);
+            });
+        });
+
+        // Hero Parallax depth on mouse move
+        const heroContainer = document.querySelector('.hero-parallax-container');
+        if (heroContainer) {
+            window.addEventListener('mousemove', (e) => {
+                const elements = heroContainer.querySelectorAll('.parallax-element');
+                const rect = heroContainer.getBoundingClientRect();
+                if (rect.bottom < 0 || rect.top > window.innerHeight) return;
+                
+                const centerX = rect.left + rect.width / 2;
+                const centerY = rect.top + rect.height / 2;
+                const offsetX = (e.clientX - centerX) / 35;
+                const offsetY = (e.clientY - centerY) / 35;
+                
+                elements.forEach(el => {
+                    const depth = parseFloat(el.getAttribute('data-depth')) || 0.1;
+                    const dx = offsetX * depth;
+                    const dy = offsetY * depth;
+                    el.style.transform = `translate(${dx}rem, ${dy}rem)`;
+                    el.style.transition = 'transform 0.25s cubic-bezier(0.22, 1, 0.36, 1)';
+                });
+            });
+            
+            heroContainer.addEventListener('mouseleave', () => {
+                const elements = heroContainer.querySelectorAll('.parallax-element');
+                elements.forEach(el => {
+                    el.style.transform = 'translate(0px, 0px)';
+                    el.style.transition = 'transform 0.8s cubic-bezier(0.22, 1, 0.36, 1)';
+                });
+            });
+        }
+
+        // Magnetic Attraction & spring physics on buttons
+        const magneticButtons = document.querySelectorAll('.magnetic-button');
+        magneticButtons.forEach(btn => {
+            btn.addEventListener('mousemove', (e) => {
+                const rect = btn.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                btn.style.transform = `translate(${x * 0.35}px, ${y * 0.35}px) scale(1.03)`;
+                btn.style.transition = 'transform 0.1s ease-out';
+            });
+            btn.addEventListener('mouseleave', () => {
+                btn.style.transform = 'translate(0px, 0px) scale(1)';
+                btn.style.transition = 'transform 0.5s cubic-bezier(0.22, 1, 0.36, 1)';
+            });
+            btn.addEventListener('mousedown', () => {
+                btn.style.transform = 'translate(0px, 0px) scale(0.95)';
+                btn.style.transition = 'transform 0.1s ease';
+            });
+            btn.addEventListener('mouseup', () => {
+                btn.style.transform = 'translate(0px, 0px) scale(1.03)';
+                btn.style.transition = 'transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+            });
+        });
+    </script>
+</body></html>
